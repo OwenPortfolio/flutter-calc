@@ -37,16 +37,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String _screen = '0';
 
-  void _incrementCounter() {
+  void _updateScreen(buttonText) {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _screen+= buttonText;
+    });
+  }
+
+  void _clear() {
+    setState(() {
+      _screen = '';
     });
   }
 
@@ -85,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
             Text(
-              '$_counter',
+              '$_screen',
               style: Theme.of(context).textTheme.headline4,
             ),
 
@@ -101,29 +107,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ElevatedButton(
                     onPressed: (){
-
+                      _updateScreen('Test Button');
                     },
                     child: Text('Test Button')
                   ),
                   ElevatedButton(
                     onPressed: (){
-    
+                      _updateScreen('Other Test Button');
                     },
                     child: Text('Other Test Button')
-                  )
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      _clear();
+                    },
+                    child: Text('Clear')
+                  ),
                 ]
               ),              
             ),
           ],
         ),
       ),
-
-
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: Text('1'),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
