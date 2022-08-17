@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:function_tree/function_tree.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _screen = '0';
+  String _screen = '';
 
   void _updateScreen(buttonText) {
     setState(() {
@@ -56,6 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _equals() {
+    setState(() {
+      _screen = _screen.interpret().toString();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,15 +113,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ElevatedButton(
                     onPressed: (){
-                      _updateScreen('Test Button');
+                      _updateScreen('1');
                     },
-                    child: Text('Test Button')
+                    child: Text('1')
                   ),
                   ElevatedButton(
                     onPressed: (){
-                      _updateScreen('Other Test Button');
+                      _updateScreen('2');
                     },
-                    child: Text('Other Test Button')
+                    child: Text('2')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      _updateScreen('+');
+                    },
+                    child: Text('+')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      _equals();
+                    },
+                    child: Text('=')
                   ),
                   ElevatedButton(
                     onPressed: (){
