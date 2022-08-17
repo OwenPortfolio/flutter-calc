@@ -71,24 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Card(
               child: Padding(
@@ -102,44 +85,149 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Container (
+              padding: const EdgeInsets.all(20),
+              margin: EdgeInsets.symmetric(horizontal: 175.0),
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: Colors.red[800],
                 borderRadius: BorderRadius.circular(5)
               ),
-              child: Column (
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
                     padding:EdgeInsets.all(10.0),
                   ),
-                  ElevatedButton(
-                    onPressed: (){
-                      _updateScreen('1');
-                    },
-                    child: Text('1')
+                  Column(
+                    children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('+');
+                      },
+                      child: Text('+')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('-');
+                      },
+                      child: Text('-')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('*');
+                      },
+                      child: Text('*')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('*');
+                      },
+                      child: Text('*')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('/');
+                      },
+                      child: Text('/')
+                    ),
+                      ]
+                    ),
+                  Column(
+                    children: [
+                    ElevatedButton(
+                        onPressed: (){
+                          _updateScreen('1');
+                      },
+                      child: Text('1')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('3');
+                      },
+                      child: Text('3')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('5');
+                      },
+                      child: Text('5')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('7');
+                      },
+                      child: Text('7')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('9');
+                      },
+                      child: Text('9')
+                    )
+                      ]
                   ),
-                  ElevatedButton(
-                    onPressed: (){
-                      _updateScreen('2');
-                    },
-                    child: Text('2')
+                  Column(
+                    children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('2');
+                      },
+                      child: Text('2')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('4');
+                      },
+                      child: Text('4')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('6');
+                      },
+                      child: Text('6')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('8');
+                      },
+                      child: Text('8')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _updateScreen('0');
+                      },
+                      child: Text('0')
+                    ),
+                      ]
                   ),
-                  ElevatedButton(
-                    onPressed: (){
-                      _updateScreen('+');
-                    },
-                    child: Text('+')
-                  ),
-                  ElevatedButton(
-                    onPressed: (){
-                      _equals();
-                    },
-                    child: Text('=')
-                  ),
-                  ElevatedButton(
-                    onPressed: (){
-                      _clear();
-                    },
-                    child: Text('Clear')
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        _equals();
+                      },
+                      child: Text('=')
+                    ),
+                    SizedBox(height: 5),
+                    ElevatedButton(
+                      onPressed: (){
+                        _clear();
+                      },
+                      child: Text('Clear')
+                    ),
+                      ]
                   ),
                 ]
               ),              
