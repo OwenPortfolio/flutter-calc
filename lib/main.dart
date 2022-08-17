@@ -94,9 +94,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(5)
               ),
-              child: Padding(
-                padding:EdgeInsets.all(10.0),
-              )
+              child: Column (
+                children: [
+                  Padding(
+                    padding:EdgeInsets.all(10.0),
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+
+                    },
+                    child: Text('Test Button')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+    
+                    },
+                    child: Text('Other Test Button')
+                  )
+                ]
+              ),              
             ),
           ],
         ),
