@@ -63,12 +63,6 @@ List<String> operators = ['+', '-', '/', '*'];
       body: Center(
         child: Column(
           children: <Widget>[
-            const Card(
-              child: Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Press the Buttons to Use the Calculator')
-              )
-            ),
             Text(
               '$_screen',
               style: Theme.of(context).textTheme.headline4,
